@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Align 4</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <!-- links for the styling sheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+  </head>
+
+  <body>
+    <!-- Background music for the entire game -->
+    <audio src="music/backgroundMusic.mp3" id="backgroundMusic" autoplay loop muted></audio>
+    <!-- Add your site or application content here -->
+    <div class="container">
+      <div class="headerSection"> <!-- top bar section with nav and title -->
+        <nav class="settings"> <!-- navigation/settings -->
+          <a href="./about.html" class="navLink"> <!-- link to the about page -->
+            <img src="img/about.png" alt="about icon" class="icon" id="aboutButton">
+            <span class="navText">About</span>
+          </a>
+          <a onclick="muteMusic()" class="navLink"> <!-- mute for background music -->
+            <img src="img/muted.png" alt="mute icon" class="icon" id="muteButton">
+            <span id="muteText" class="navText">Unmute</span>
+          </a>
+        </nav>
+        <div class="header"> <!-- title image -->
+          <img src="img/title.png" id="webTitle">
+        </div>
+      </div>
+      <div class="mainSection">
+        <div class="gameArea">
+          <div class="game"> <!-- area where the actual game is played -->
+            <div class="gameBoard"></div>
+            <!-- area for column selection buttons -->
+            <div class="arrows">
+              <button class="arrow" id="arrow1" onclick="sendColumn('arrow1')"></button>
+              <button class="arrow" id="arrow2" onclick="sendColumn('arrow2')"></button>
+              <button class="arrow" id="arrow3" onclick="sendColumn('arrow3')"></button>
+              <button class="arrow" id="arrow4" onclick="sendColumn('arrow4')"></button>
+              <button class="arrow" id="arrow5" onclick="sendColumn('arrow5')"></button>
+            </div>
+
+            <!-- area for chips -->
+            <div class="chips">
+              <!-- red chips -->
+              <img class="chip" id="red1" src="img/redChip.png">
+              <img class="chip" id="red2" src="img/redChip.png">
+              <img class="chip" id="red3" src="img/redChip.png">
+              <img class="chip" id="red4" src="img/redChip.png">
+              <img class="chip" id="red5" src="img/redChip.png">
+              <img class="chip" id="red6" src="img/redChip.png">
+              <img class="chip" id="red7" src="img/redChip.png">
+              <img class="chip" id="red8" src="img/redChip.png">
+              <img class="chip" id="red9" src="img/redChip.png">
+              <img class="chip" id="red10" src="img/redChip.png">
+              <img class="chip" id="red11" src="img/redChip.png">
+              <img class="chip" id="red12" src="img/redChip.png">
+              <img class="chip" id="red13" src="img/redChip.png">
+
+              <!-- yellow chips -->
+              <img class="chip" id="yellow1" src="img/yellowChip.png">
+              <img class="chip" id="yellow2" src="img/yellowChip.png">
+              <img class="chip" id="yellow3" src="img/yellowChip.png">
+              <img class="chip" id="yellow4" src="img/yellowChip.png">
+              <img class="chip" id="yellow5" src="img/yellowChip.png">
+              <img class="chip" id="yellow6" src="img/yellowChip.png">
+              <img class="chip" id="yellow7" src="img/yellowChip.png">
+              <img class="chip" id="yellow8" src="img/yellowChip.png">
+              <img class="chip" id="yellow9" src="img/yellowChip.png">
+              <img class="chip" id="yellow10" src="img/yellowChip.png">
+              <img class="chip" id="yellow11" src="img/yellowChip.png">
+              <img class="chip" id="yellow12" src="img/yellowChip.png">
+              <img class="chip" id="yellow13" src="img/yellowChip.png">
+
+
+            </div>
+
+            <!-- screen to be displayed on win/loss/draw -->
+            <div class="endScreen">
+                <div>
+                  <!-- changes for win/loss/draw -->
+                  <h1 id="endText">Display win/loss/draw here</h1>
+                </div>
+                <div id="endButtons">
+                  <!-- button to return home -->
+                  <button class="endButton" id="leave" onclick="endToHome()">LEAVE</button>
+                </div>
+            </div>
+          </div>
+
+
+
+          <!-- home screen with join/create buttons -->
+          <div class="newGame">
+            <button class="inputButton" id="createGame" onclick="newLobby()">CREATE GAME</button>
+            <button class="inputButton" id="joinGame" onclick="homeToInput()">JOIN GAME</button>
+          </div>
+
+
+          <!-- wait screen after create is pressed/shows while waiting for player 2 -->
+          <div class="waitScreen">
+            <div id="gameCode">
+              <!-- shows code to share to friend -->
+              <h1 id="gameCodeText"></h1>
+            </div>
+            <div id="waiting">
+              <!-- animated waiting text -->
+              <h1 class="animate" id="waitingText">Waiting for player 2!</h1>
+            </div>
+            <div id="flipPiece">
+              <!-- minigame to play while waiting that flips a chip -->
+              <img id="pieceWidget" class="stateRed" onclick="flipPiece()">
+            </div>
+          </div>
+
+
+          <!-- screen that takes input of a room code for player 2 -->
+          <div class="inputScreen">
+            <input type="text" class="input" id="codeInput" placeholder="Enter game code..."/>
+            <button class="inputButton" id="codeReturn" onclick="inputToHome()">BACK</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="notification">
+      <h1 id="notifText"></h1>
+    </div>
+
+  </body>
+
+  <!-- linking all the javascript -->
+  <script src="js/screenSwitches.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/arrowSwitching.js"></script>
+  <script src="js/moveChips.js"></script>
+  <script src="js/settings.js"></script>
+
+</html>
+
+

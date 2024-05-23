@@ -1,0 +1,33 @@
+/* header section */
+.aboutHeader{
+    flex: 0 0 70%;
+    text-align: left;
+    align-items: center;
+}
+
+#aboutTitleImage{
+    width: 58%;
+}
+
+
+/* information section section */
+
+.aboutMainSection{
+    color: bisque;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.aboutSection{
+    color: #000000;
+}
+
+.aboutText{
+    margin-left: 50px;
+}
+
+.contributors{
+    color: #000000;
+    margin-top: 80px;
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Align 4</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+
+    <!-- Linking style sheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body>
+<!-- background music -->
+<audio src="music/backgroundMusic.mp3" id="backgroundMusic" autoplay loop muted></audio>
+<!-- Add your site or application content here -->
+<div class="container">
+    <div class="headerSection"> <!-- top bar section with nav and title -->
+        <nav class="settings"> <!-- navigation/settings -->
+            <a href="./index.html" class="navLink"> <!-- link back to index page -->
+                <img src="img/about.png" alt="about icon" class="icon" id="aboutButton">
+                <span class="navText">Home</span>
+            </a>
+            <a onclick="muteMusic()" class="navLink"> <!-- mute for background music -->
+                <img src="img/muted.png" alt="mute icon" class="icon" id="muteButton">
+                <span id="muteText" class="navText">Unmute</span>
+            </a>
+        </nav>
+        <div class="aboutHeader"> <!-- title image -->
+            <img src="img/aboutTitle.png" id="aboutTitleImage">
+        </div>
+    </div>
+    <div class="aboutMainSection"> <!-- text box area for the about information -->
+        <div class="aboutSection">
+            <h1>
+                About Our Game:
+            </h1>
+            <div class="aboutText">
+                The goal of this game is to align four chips in succession before your opponent can.
+                <br>
+                Win conditions include getting four chips in a row horizontally, vertically, or diagonal.
+                <br>
+                If neither player can align four chips, then the game is a tie.
+                <br>
+                To start playing Align 4, it's as simple as creating a room and giving the code you see on the screen to a friend.
+                <br>
+                Once they have joined you take turns dropping chips into the board using the arrow buttons until someone wins or the board is filled.
+                <br>
+                Please enjoy playing, all of our art resources were made in-house as well!
+            </div>
+        </div>
+        <div class="contributors">
+            <h1>
+                Contributors
+            </h1>
+            <ul>
+                <li>
+                    Jeremy Thummel
+                </li>
+                <li>
+                    Owen Tustin-Fuchs
+                </li>
+                <li>
+                    Seth Cumby
+                </li>
+                <li>
+                    Trevor Lee
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+<!-- linking all the javascript -->
+<script src="js/screenSwitches.js"></script>
+<script src="js/main.js"></script>
+<script src="js/arrowSwitching.js"></script>
+<script src="js/moveChips.js"></script>
+<script src="js/settings.js"></script>
+
+</html>

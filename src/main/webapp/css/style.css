@@ -1,0 +1,659 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: bisque;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: bisque;
+}
+
+.hidden{
+    display: none;
+}
+
+/* ------- notification ------- */
+
+.notification{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    left: 10px;
+    top: 90%;
+    border: 4px solid #595959;
+    border-radius: 5px;
+    background-color: #8f8f8f;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+#notifText{
+    color: white;
+}
+
+
+
+/* ------- animation ------- */
+
+@keyframes waitingBreathe {
+    0% { transform: scale(1.2); opacity: 0.7;}
+    50% { transform: scale(1.6); opacity: 1;}
+    100% { transform: scale(1.2); opacity: 0.7;}
+}
+
+@keyframes arrowBreathing {
+    0% { transform: scale(1); opacity: 0.7;}
+    50% { transform: scale(1.5); opacity: 1;}
+    100% { transform: scale(1); opacity: 0.7;}
+}
+
+.animate {
+    animation: waitingBreathe 3s infinite cubic-bezier(0.4,0,0.2,1);
+}
+
+
+
+
+
+/* ------- header ------- */
+
+.headerSection{
+    flex: 0 0 13%;
+    padding: 5px;
+    background-color: #3d599d;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.header{
+    flex: 0 0 61%;
+    text-align: left;
+    align-items: center;
+}
+
+#webTitle {
+    width: 35%;
+}
+
+
+
+
+/* ------- nav bar / settings ------- */
+
+.settings{
+    background-color: #7e7e7e;
+    width: 3.1rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    border: 3px solid #505050;
+    transition: width 150ms;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.settings:hover {
+    width: 11rem;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 3px solid #505050;
+    margin: 2px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icon {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.navText {
+    font-size: 16pt;
+    margin-left: 12px;
+    color: aliceblue;
+}
+
+
+
+
+
+
+/* ------ game area ------- */
+
+.mainSection{
+    background-color: black;
+    display: flex;
+    flex: 1;
+}
+
+/*
+.chat{
+    display: none;
+    background-color: aquamarine;
+    flex: 0 0 15%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 5px;
+}*/
+
+.gameArea{
+    display: flex;
+    flex: 1;
+    background-color: #000000;
+}
+
+
+
+
+
+
+/* ------- actual played game section ------- */
+.game{
+    background-color: transparent;
+    display: none;
+    border-radius: 20px;
+    padding: 5px;
+    flex: 1;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: relative;
+}
+
+.gameBoard {
+    width: 1800px;
+    height: 759px;
+    position: absolute;
+    left: 61px;
+    background-color: transparent;
+    background-image: url(../img/background.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+/* ------ arrow buttons ------- */
+
+.arrows {
+    position: absolute;
+    z-index: 3;
+}
+
+.arrow {
+    position: absolute;
+    background-color: transparent;
+    background-image: url("../img/arrow.png");
+    background-size: contain;
+    border: none;
+    top: 21px;
+    width: 50px;
+    height: 67px;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    animation: arrowBreathing 3s infinite cubic-bezier(0.4,0,0.3,1);
+}
+
+#arrow1 {
+    left: 688px;
+}
+
+#arrow2 {
+    left: 809px;
+}
+
+#arrow3 {
+    left: 931px;
+}
+
+#arrow4 {
+    left: 1053px;
+}
+
+#arrow5 {
+    left: 1175px;
+}
+
+/* ------ chip classes ------- */
+
+.chips {
+    position: relative;
+    z-index: 1;
+}
+
+.chip {
+    position: absolute;
+    transform: scale(0.8);
+    transition: top 1s ease-in, left 1s ease-in-out, opacity 1s ease;
+}
+
+.aboutMainSection {
+    margin-left: 20%;
+    background-color: bisque;
+}
+
+.aboutSection {
+    color: black;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.aboutText {
+    color: black;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.contributors {
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+
+/* red chips */
+
+#red1 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red2 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red3 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red4 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red5 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red6 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red7 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red8 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red9 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red10 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red11 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red12 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+#red13 {
+    top: 640px;
+    left: 400px;
+    opacity: 0;
+}
+
+/* yellow chips */
+
+#yellow1 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow2 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow3 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow4 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow5 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow6 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow7 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow8 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow9 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow10 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow11 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow12 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+#yellow13 {
+    top: 640px;
+    left: 1380px;
+    opacity: 0;
+}
+
+/* ------ game over section ------- */
+
+.endScreen{
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: rgb(0,0,0, 0.6);
+    position: absolute;
+    height: 99%;
+    width: 99%;
+    z-index: 4;
+}
+
+#endButtons{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+#endText{
+    color: aliceblue;
+    margin-bottom: 40px;
+}
+
+.endButton{
+    height: 100%;
+    width: 40%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: width 1s ease;
+}
+
+.endButton:hover{
+    width: 60%;
+}
+
+#leave{
+    color: aliceblue;
+    background-color: #cf2525;
+}
+
+
+
+
+
+
+/* ------ home screen section ------- */
+.newGame{
+    display: flex;
+    background-color: bisque;
+    border-radius: 20px;
+    padding: 5px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.inputButton{
+    font-size: 32px;
+    background-color: chocolate;
+    color: #fff;
+    height: 40%;
+    width: 40%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: width 1s ease;
+}
+
+.inputButton:hover{
+    width: 70%;
+}
+
+#createGame{
+    background-color: #cf2525;
+}
+
+#joinGame{
+    background-color: #db832f;
+}
+
+
+
+
+
+/* ------ waiting screen section ------- */
+.waitScreen{
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: #000000;
+    align-items: center;
+}
+
+#gameCode {
+    flex: 0 0 20%;
+}
+
+#gameCodeText {
+    color: aliceblue;
+    font-size: 50px;
+
+}
+
+#waiting {
+    margin-top: 150px;
+}
+
+#waitingText {
+    color: aliceblue;
+}
+
+/* ------ mini waiting game section ------- */
+
+#flipPiece {
+    margin-top: 40px;
+}
+
+#pieceWidget {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.stateRed {
+    content: url('../img/pieceFlipR.png');
+}
+
+.stateYellow {
+    content: url('../img/pieceFlipY.png');
+}
+
+.stateMiddle {
+    content: url('../img/pieceFlipping.png');
+}
+
+
+
+
+
+
+
+/* ------ joining game with code section ------- */
+.inputScreen{
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+}
+
+#codeInput {
+    transform: scale(1.6);
+    border-radius: 7px;
+    margin-bottom: 25px;
+}
+
+#codeReturn{
+    height: 7%;
+    width: 7%;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#codeReturn:hover{
+    opacity: 0.8;
+    transform: scale(0.8);
+}
+
+
+
+
+
+
+
+
+/* keep these for reference */
+
+.col1 {
+    left: 648px;
+}
+
+.col2 {
+    left: 770px;
+}
+
+.col3 {
+    left: 892px;
+}
+
+.col4 {
+    left: 1014px;
+}
+
+.col5 {
+    left: 1136px;
+}
+
+/*below classes are row placement styles*/
+
+.row1 {
+    top: 117px;
+}
+
+.row2 {
+    top: 241px;
+}
+
+.row3 {
+    top: 362px;
+}
+
+.row4 {
+    top: 485px;
+}
+
+.row5 {
+    top: 607px;
+}
