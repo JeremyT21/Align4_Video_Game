@@ -1,46 +1,20 @@
-# Final Assignment
+# Align 4!!
 > Course: CSCI 2020U: Software Systems Development and Integration
 
 ## 1. Project Information
 This project was created by Jeremy Thummel, Owen Tustin-Fuchs, Seth Cumby, Trevor Lee.
-
-Our project "Align 4!!" is a web-based game heavily inspired by Hasbro's classic strategy game "Connect 4". We utilize a Java-based server for handling the back-end of interactions between 2 different players. We also use a combination of Javascript, html, and css to provide a quality front-end/UI experience including animated buttons, animated gameplay, music, and in-house created game elements (align 4!! logo, board, chips). The game consists of a 5x5 grid where you take turns placing chips at the bottom of a chosen column with another player, and try to be the first one to get 4-in-a-row. A video demo displaying the functionality of our code can be found here:
+<br>
+<br>
+Our project "Align 4!!" is a web-based game heavily inspired by Hasbro's classic strategy game "Connect 4". The project is built with Maven, and uses Jakarta EE for Servlet and WebSocket functionality (enabling communication between the server and clients). We utilize a Java-based server for handling the back-end of interactions between 2 different players. We also use a combination of JavaScript, HTML, and CSS to provide a quality front-end/UI experience including animated buttons, animated gameplay, music, and in-house created game elements (Align 4!! logo, board, game pieces, etc.). The game consists of a 5x5 grid where you take turns placing chips at the bottom of a chosen column with another player, and try to be the first one to get 4-in-a-row. A video demo displaying the functionality of our code can be found here:
 
 https://github.com/OntarioTech-CS-program/w24-csci2020u-final-project-lee-cumby-thummel-tustinfuchs/assets/114171041/a083c5c7-03d8-4c9e-bcef-3822bc37693a
-
-
-**Jeremy Thummel, Owen Tustin-Fuchs & Trevor Lee**
-- ```
-  Game functionality, lobby joining, and impementation of functions designed by Seth
-  Java Implementation
-    - GameServer.java
-    - GameServlet.java
-  Javascript implementation
-    - main.js
-    - tweaks to other .js files
-  ```
-
-**Seth Cumby**
-- ```
-  Created and coded:
-        - index.html
-        - about.html
-        - screenSwitches.js
-        - moveChips.js
-        - settings.js
-  
-  Created interface code and all of the styling, 
-  including all page designs and page states, buttons,
-  animations, background music implementation, etc., as
-  well as creating the code for transitioning between them in js.
-  ```
 
 ## 2. How To Run
  Step-By-Step Guide
 
     1. Download the full project from the GitHub repository.
     
-    2. Open the project in IntelliJ, and add the local GlassFish configuration (assuming the GlassFish plugin is installed).
+    2. Open the project in IntelliJ, and add the local GlassFish configuration (the GlassFish plugin must be installed).
     
     3. Provide the version 21 JDK for deployment, and the url “http://localhost:8080/FinalAssignment-1.0-SNAPSHOT/”.
     
@@ -58,7 +32,7 @@ https://github.com/OntarioTech-CS-program/w24-csci2020u-final-project-lee-cumby-
 
 ## 3. Resources
 
-Artistic resources such as title art, game-related art, and audio were contributed by Jeremy Thummel
+Artistic resources such as title art, game-related art, and audio were contributed by Jeremy Thummel.
 
 
 ## 4. Comments
